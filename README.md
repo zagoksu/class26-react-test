@@ -14,12 +14,11 @@ http://hyf-react-test.herokuapp.com/
 ### The requirements
 
 - Create and use **at least 3 reusable components**
-- Declare state at the top level and pass the props down
 - Make use of React hooks: at least `useState`
-- Every time a user clicks on the button, it should fetch new users
+- Every time a user **clicks** on the button, it should **fetch new users**
 - Use the following API: https://randomuser.me/api/?results=5
-- Add a loading state when the data is fetching (find a spinner by Googling)
-- Add an error message if something went wrong
+- Add a **loading state** when the data is fetching (find a spinner by Googling)
+- Add an **error message** if something went wrong
 
 ### How to submit your test
 
