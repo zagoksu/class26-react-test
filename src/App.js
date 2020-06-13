@@ -1,7 +1,11 @@
 import React from "react";
+import Users from './Components/Users';
+import './App.css';
 
 function App() {
-  return <div>Good luck dear students!</div>;
+  return <div className="app">
+    <Users />
+  </div>;
 }
 
 export default App;

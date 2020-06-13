@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin:10px 0 10px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
+
+li span:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.app{
+    margin-left: 10%;
+}
