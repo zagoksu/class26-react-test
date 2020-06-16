@@ -9,20 +9,24 @@ export default function Users() {
   const [hasError, setError] = useState(false);
   const [info, setInfo] = useState('');
 
-function getUsers() {
-    setLoading(true);
-    fetch('https://randomuser.me/api/?results=5')
-        .then(res => res.json())
-        .then(data => {
-            setUsers(data.results);
-            setLoading(false);
-        })
-        .catch(err => {
-            setError(true);
-            setLoading(false);
-        })
- }
-
+const getUsers = async () => {
+  setLoading(true);
+  try {
+    const response = await fetch('https://randomuser.me/api/?results=5');
+    if (response.ok) {
+      const data = await response.json();
+      setUsers(data.results);
+      setError(false);
+    } else {
+      throw new Error("Something went wrong...");
+    }
+  } catch (err) {
+    setError(true);
+  } finally {
+    setLoading(false);
+  }
+};
+    
  function getUserInfo(user) {
      return setInfo(user)
  }
@@ -30,7 +34,9 @@ function getUsers() {
   return (
     <div>
       <div>
-        <Button handleEvent={getUsers} />
+        <div>
+          <Button handleEvent={getUsers} />
+        </div>
         {hasError && <p className="err">Something went wrong</p>}
         {isLoading && <div class="spinner-border"></div>}
         {!hasError && <UserList users={users} handleClick={getUserInfo}/>}

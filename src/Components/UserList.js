@@ -1,16 +1,12 @@
 import React from 'react';
+import ListItems from './ListItems';
 
-export default function UserList({ users, handleClick }) {
+export default function UserList({users, handleClick}) {
   return (
     <ul>
       {users.map((user) => {
         return (
-          <li
-            key={user.login.uuid}
-            onClick={() => handleClick(user)}
-          >
-            <span>{user.name.first + ' ' + user.name.last}</span>
-          </li>
+          <ListItems user={user} handleEvent={() => handleClick(user)}/>
         );
       })}
     </ul>
